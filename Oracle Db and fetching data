@@ -1,0 +1,15 @@
+Installing CX_Oracle in windows
+
+Open anaconda prompt and run the below command
+"python -m pip install cx_Oracle --upgrade"
+
+python code:
+import cx_Oracle
+con = cx_Oracle.connect('scott/tiger@localhost:1522/pdborcl')
+print (con.version)
+
+
+query = "select * from dept order by deptno"
+df_ora = pd.read_sql(query, con)
+print(df_ora)
+
